@@ -1,100 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#243B35">
-  <meta name="description" content="InkLayer 支援、購買與退款。">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>InkLayer 支援</title>
-  <link rel="icon" href="/icon.png">
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f4f6f1;
-      --surface: #ffffff;
-      --text: #202521;
-      --muted: #5d6860;
-      --accent: #2f7558;
-      --border: #9aa49b;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #0b1115;
-        --surface: #111a1f;
-        --text: #f4f6f1;
-        --muted: #b3bdb4;
-        --accent: #69c49b;
-        --border: #435049;
+  <meta name="description" content="InkLayer 支援、購買與退款。">
+  <meta name="theme-color" content="#f5fbf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1e1c" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://inklayer.app/support.zh-TW.html">
+  <link rel="alternate" hreflang="en" href="https://inklayer.app/support/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://inklayer.app/support.zh-TW.html">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InkLayer">
+  <meta property="og:title" content="InkLayer 支援">
+  <meta property="og:description" content="InkLayer 支援、購買與退款。">
+  <meta property="og:url" content="https://inklayer.app/support.zh-TW.html">
+  <meta property="og:image" content="https://inklayer.app/assets/img/og-zh.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6824608659">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        seen.unobserve(entry.target);
       }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--background);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 32px 20px;
-    }
-
-    main {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin: 0 auto;
-      max-width: 860px;
-      padding: 28px;
-    }
-
-    img {
-      border-radius: 8px;
-      height: 56px;
-      width: 56px;
-    }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.15;
-      margin: 18px 0 8px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin: 28px 0 10px;
-    }
-
-    p,
-    li {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .notice {
-      border-left: 4px solid var(--accent);
-      margin: 22px 0;
-      padding: 10px 14px;
-    }
-
-    .language-links {
-      display: flex;
-      gap: 14px;
-      margin: 18px 0 0;
-    }
-  </style>
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => seen.observe(el));
+});
+</script>
 </head>
 <body>
-  <main>
-    <img src="/icon.png" alt="InkLayer">
+<a class="skip" href="#main">跳到內容</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.zh-TW.html"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <nav class="nav" aria-label="InkLayer"><a href="/index.zh-TW.html#features">功能</a><a href="/index.zh-TW.html#yours">你的檔案</a><a href="/index.zh-TW.html#pricing">價格</a><a href="/support.zh-TW.html">支援</a><a class="lang" href="/" hreflang="en" lang="en">English</a></nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6824608659">免費下載</a>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <article class="doc">
     <h1>InkLayer 支援</h1>
     <nav class="language-links"><a href="/support/" hreflang="en">English</a></nav>
     <p>InkLayer 把手寫、PDF 與 Markdown 筆記放在同一張畫布上，檔案都是你自己的。</p>
@@ -125,6 +79,15 @@
     <p>請參閱 <a href="/privacy.zh-TW.html">InkLayer 隱私權政策</a>。</p>
 
     <p class="notice">InkLayer · voidful · <a href="/privacy.zh-TW.html">隱私權政策</a></p>
-  </main>
+  </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/index.zh-TW.html"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <span>© 2026 voidful</span>
+    <nav aria-label="Footer"><a href="/privacy.zh-TW.html">隱私權政策</a><a href="/support.zh-TW.html">支援</a><a href="mailto:support@eric-lam.com">聯絡我們</a><a href="/" hreflang="en" lang="en">English</a></nav>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,117 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#243B35">
-  <meta name="description" content="InkLayer：手寫、PDF 與 Markdown 筆記在同一張畫布上，存成屬於你的檔案。">
-  <title>InkLayer</title>
-  <link rel="icon" href="/icon.png">
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f4f6f1;
-      --surface: #ffffff;
-      --text: #202521;
-      --muted: #5d6860;
-      --accent: #2f7558;
-      --border: #9aa49b;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #0b1115;
-        --surface: #111a1f;
-        --text: #f4f6f1;
-        --muted: #b3bdb4;
-        --accent: #69c49b;
-        --border: #435049;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InkLayer — 手寫、PDF 與筆記，都在同一張畫布上</title>
+  <meta name="description" content="InkLayer 把手寫、PDF 與 Markdown 筆記放在同一張畫布上，存成屬於你的檔案。支援 iPhone、iPad 與 Mac。不需要帳號，沒有廣告與追蹤。">
+  <meta name="theme-color" content="#f5fbf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1e1c" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://inklayer.app/index.zh-TW.html">
+  <link rel="alternate" hreflang="en" href="https://inklayer.app/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://inklayer.app/index.zh-TW.html">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InkLayer">
+  <meta property="og:title" content="InkLayer — 手寫、PDF 與筆記，都在同一張畫布上">
+  <meta property="og:description" content="InkLayer 把手寫、PDF 與 Markdown 筆記放在同一張畫布上，存成屬於你的檔案。支援 iPhone、iPad 與 Mac。不需要帳號，沒有廣告與追蹤。">
+  <meta property="og:url" content="https://inklayer.app/index.zh-TW.html">
+  <meta property="og:image" content="https://inklayer.app/assets/img/og-zh.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6824608659">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        seen.unobserve(entry.target);
       }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--background);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 32px 20px;
-    }
-
-    main {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin: 0 auto;
-      max-width: 860px;
-      padding: 28px;
-    }
-
-    img {
-      border-radius: 8px;
-      height: 56px;
-      width: 56px;
-    }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.15;
-      margin: 18px 0 8px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin: 28px 0 10px;
-    }
-
-    p,
-    li {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .notice {
-      border-left: 4px solid var(--accent);
-      margin: 22px 0;
-      padding: 10px 14px;
-    }
-
-    .language-links {
-      display: flex;
-      gap: 14px;
-      margin: 18px 0 0;
-    }
-  </style>
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => seen.observe(el));
+});
+</script>
 </head>
 <body>
-  <main>
-    <img src="/icon.png" alt="InkLayer">
-    <h1>InkLayer</h1>
-    <nav class="language-links"><a href="/" hreflang="en">English</a></nav>
-    <p>InkLayer 是一款筆記 App，把手寫、PDF 與 Markdown 筆記放在同一張畫布上，存成屬於你自己的檔案。</p>
-
-    <h2>功能</h2>
-    <ul>
-      <li><strong>在 PDF 上手寫</strong>：用 Apple Pencil 或觸控筆書寫，手寫存在 PDF 旁邊，原始檔案不會被修改。</li>
-      <li><strong>Markdown 筆記</strong>：筆記之間可以互相連結，有反向連結與關聯圖。</li>
-      <li><strong>圖層</strong>：PDF、打字、手寫與圖片各自分開，可以個別顯示、隱藏或匯出。</li>
-      <li><strong>畫布</strong>：頁面、卡片、錄音與流程圖並排整理。</li>
-      <li><strong>你的檔案，用你的方式同步</strong>：筆記庫就是一般的 Markdown 與 PDF 資料夾。可以放在 iCloud 雲碟、透過你自己的 Google 雲端硬碟同步，或使用你選擇的 WebDAV 伺服器。InkLayer 沒有帳號，也沒有自己的伺服器。</li>
-    </ul>
-
-    <h2>下載 InkLayer</h2>
-    <p><a href="https://apps.apple.com/app/id6824608659">App Store 上的 InkLayer</a>，支援 iPhone、iPad 與 Mac。</p>
-
-    <p class="notice"><a href="/privacy.zh-TW.html">隱私權政策</a> · <a href="/support.zh-TW.html">支援</a> · InkLayer · voidful</p>
-  </main>
+<a class="skip" href="#main">跳到內容</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.zh-TW.html"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <nav class="nav" aria-label="InkLayer"><a href="#features">功能</a><a href="#yours">你的檔案</a><a href="#pricing">價格</a><a href="/support.zh-TW.html">支援</a><a class="lang" href="/" hreflang="en" lang="en">English</a></nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6824608659">免費下載</a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">iPhone、iPad、Mac 都能用</p>
+        <h1>手寫、PDF 與筆記，<br>都在<span class="inked">同一張畫布<svg class="circle" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><path class="ink-stroke draw" style="--len:1100" stroke="var(--red-ink)" stroke-width="4" vector-effect="non-scaling-stroke" d="M30 22C120 4 300 2 372 22c34 10 30 40-6 54-70 26-250 26-320 8C2 72-6 44 34 26c40-16 110-20 170-18"/></svg></span>上。</h1>
+        <p class="lede">InkLayer 讓每一層各自分開，每個檔案都屬於你：在 PDF 上書寫而不改動原檔、用連結串起 Markdown 筆記，再把一切並排在畫布上。</p>
+        <div class="cta-row"><a class="store-badge" href="https://apps.apple.com/app/id6824608659"><img src="/assets/img/app-store-badge.svg" alt="在 App Store 下載" width="162" height="54"></a><span class="cta-note">免費下載 · 不需要帳號</span></div>
+      </div>
+      <div class="stage">
+        <svg class="arrow" viewBox="0 0 160 120" aria-hidden="true"><path class="ink-stroke draw" style="--len:320" stroke="var(--navy-ink)" stroke-width="4" d="M10 14c40-6 96 6 118 52 6 13 9 26 10 40"/><path class="ink-stroke draw" style="--len:80" stroke="var(--navy-ink)" stroke-width="4" d="M120 92l18 18 12-26"/></svg>
+        <div class="window"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/mac-canvas-zh.webp" alt="Mac 上的 InkLayer：放著筆記、PDF 頁面與手寫的畫布" width="2000" height="1250" fetchpriority="high"></div>
+        <div class="phone"><img src="/assets/img/iphone-pdf-zh.webp" alt="iPhone 上的 InkLayer：在 PDF 上手寫" width="640" height="1391" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <ul class="promises"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/><path d="M4 4l16 16"/></svg>不需要帳號</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5a14 14 0 0 1 5-3"/><path d="M12 5.5a14 14 0 0 1 9.5 4"/><path d="M6 13a9 9 0 0 1 4-2"/><path d="M15.5 12a9 9 0 0 1 2.5 1"/><circle cx="12" cy="18" r="1.2"/><path d="M3 3l18 18"/></svg>離線也能用</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.9 8.4-7 10-4.1-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>沒有廣告與追蹤</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>檔案屬於你</li></ul>
+    <div id="features">
+    <section class="feature reveal" id="pdf">
+      <div class="feature-copy">
+        <p class="kicker">PDF 註記</p>
+        <h2>在任何 PDF 上書寫，<span class="marker">原檔一字不改。</span></h2>
+        <p>用 Apple Pencil 或觸控筆標註講義、論文與合約。手寫存在 PDF 旁邊，匯入的檔案永遠不會被修改；需要時再匯出合在一起的 PDF。</p>
+        <ul class="checks"><li>原子筆、螢光筆、形狀與套索</li><li>Apple Pencil 防誤觸</li><li>在裝置上辨識手寫，可以搜尋</li></ul>
+      </div>
+      <div class="media"><div class="tablet"><img src="/assets/img/ipad-pdf-zh.webp" alt="iPad 上的 InkLayer：有手寫、螢光筆與圖畫的 PDF" loading="lazy" decoding="async"></div></div>
+    </section><section class="feature reveal flip" id="layers">
+      <div class="feature-copy">
+        <p class="kicker">圖層</p>
+        <h2>每一樣東西，都是一個圖層。</h2>
+        <p>PDF、打字、手寫與圖片各自分開。隱藏用不到的、鎖住已完成的，也能指定新的筆跡要寫在哪一層。</p>
+        <ul class="checks"><li>每一層都能顯示、隱藏與鎖定</li><li>拖曳就能調整圖層順序</li><li>匯出時可選擇要不要帶上手寫</li></ul>
+      </div>
+      <div class="media"><div class="layers-art" role="img" aria-label="三個圖層：最下面是 PDF，中間是文字與圖片，最上面是手寫"><svg viewBox="0 0 460 300" aria-hidden="true"><path d="M70 190l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--navy-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="234">PDF</text><path d="M70 120l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--green-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="164">文字與圖片</text><path d="M70 50l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--red-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="94">手寫</text><path class="ink-stroke" stroke="var(--red-ink)" stroke-width="3" d="M140 70c12-10 22 8 32-2s22 8 34-2 20 6 30 0"/><path class="ink-stroke" stroke="var(--green-ink)" stroke-width="3" opacity="0.6" d="M150 142h90M162 154h60"/></svg></div></div>
+    </section><section class="feature reveal" id="notes">
+      <div class="feature-copy">
+        <p class="kicker">Markdown 筆記</p>
+        <h2>會互相連結的筆記。</h2>
+        <p>用 Markdown 書寫，筆記之間可以連結，有反向連結、標籤與數學式。關聯圖讓你看見想法怎麼串在一起。每則筆記都是一般的 .md 檔案。</p>
+        <ul class="checks"><li>[[連結]]、反向連結與標籤</li><li>行內與獨立的數學式</li><li>直接在筆記上手寫</li></ul>
+      </div>
+      <div class="media"><div class="window"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/mac-note-zh.webp" alt="Mac 上的 InkLayer：有手寫的 Markdown 筆記" loading="lazy" decoding="async"></div></div>
+    </section><section class="feature reveal flip" id="canvas">
+      <div class="feature-copy">
+        <p class="kicker">無限畫布</p>
+        <h2>一張放得下所有想法的桌子。</h2>
+        <p>把頁面、PDF 頁面、筆記、圖片、影片與錄音並排在無限畫布上，再跨越它們書寫。要分享時，直接當投影片播放。</p>
+        <ul class="checks"><li>卡片可以移動、縮放與鎖定</li><li>方格、橫線等各種紙張</li><li>遮蓋膠帶，拿來考自己</li></ul>
+      </div>
+      <div class="media"><div class="tablet"><img src="/assets/img/ipad-canvas-zh.webp" alt="iPad 上的 InkLayer：卡片、PDF 與手繪心智圖組成的畫布" loading="lazy" decoding="async"></div></div>
+    </section>
+    </div>
+    <section id="yours">
+      <div class="section-head reveal"><h2>你的筆記，你的檔案。</h2><p>沒有雲端帳號要你註冊。筆記庫就是你裝置上的一個資料夾，不開 InkLayer 也讀得到。</p></div>
+      <div class="cards"><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><h3>永遠是你的</h3><p>筆記庫是由 Markdown、PDF 與小小的附屬檔組成的資料夾。其他 App 也打得開，想備份到哪裡都可以。</p></article><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.9 8.4-7 10-4.1-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>從設計就重視隱私</h3><p>沒有帳號、沒有廣告、沒有分析。手寫在裝置上辨識，你寫的內容不會傳給我們。</p></article><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.6L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.3 4.6L20 16"/><path d="M20 20v-4h-4"/></svg></div><h3>用你的方式同步</h3><p>把筆記庫放在你選的資料夾，用你自己的 WebDAV 伺服器同步。1.1 起也能透過 iCloud 雲碟與 Google 雲端硬碟。</p><div class="sync-row"><span class="chip">WebDAV</span><span class="chip soon">iCloud 雲碟</span><span class="chip soon">Google 雲端硬碟</span></div></article></div>
+    </section>
+    <section>
+      <div class="section-head reveal"><h2>細節裡的用心。</h2></div>
+      <div class="grid"><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/><path d="M14.5 6.5l3 3"/></svg>Apple Pencil</h3><p>感壓筆觸、防誤觸，畫好的形狀會自動修整。</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg>錄音</h3><p>邊寫邊錄。播放時，筆記會跟著聲音一筆一筆重現。</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M10 8.5l4 1.8-4 1.7z"/></svg>簡報</h3><p>把 PDF 與畫布頁面當投影片播放，還有雷射筆。</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7"/><path d="M8.5 11.5h7"/><path d="M8.5 15h4"/></svg>電子紙模式</h3><p>關閉動畫、提高對比，適合電子紙平板。</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5"/><path d="M8 7.5l4-4 4 4"/><path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>匯出</h3><p>匯出含手寫的 PDF，或把畫布匯出成 PDF、圖片或影片。</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>加密備份</h3><p>整個筆記庫一次匯出，也可以用密碼加密。</p></article></div>
+    </section>
+    <section class="soon-panel reveal" id="next">
+      <span class="badge-11">即將推出</span>
+      <h2>InkLayer 1.1</h2>
+      <ul class="soon-list"><li><strong>iCloud 雲碟與 Google 雲端硬碟同步</strong><span>在多台裝置間同步筆記庫；兩邊同時修改時，兩個版本都會保留。</span></li><li><strong>錄音逐字稿</strong><span>在裝置上把錄音轉成可以搜尋的文字，點一下就跳到那一刻。</span></li><li><strong>翻譯 PDF 文字</strong><span>選取 PDF 上的文字，用系統內建的翻譯直接看懂。</span></li><li><strong>流程圖</strong><span>用箭頭連起畫布上的卡片，移動卡片時箭頭會跟著走。</span></li><li><strong>資料庫</strong><span>用表格整理筆記，可以篩選、排序，並匯出成 PDF。</span></li><li><strong>鍵盤快速鍵</strong><span>⌘T 開文字框、⌘/ 看所有快速鍵，打注音也不會被打斷。</span></li></ul>
+    </section>
+    <section id="pricing">
+      <div class="section-head reveal"><h2>先免費用，喜歡再買斷。</h2><p>免費版就有所有功能。終身版只解除一個限制，一次就好。</p></div>
+      <div class="plans"><article class="plan reveal"><h3>免費版</h3><p class="price">免費下載</p><ul><li>所有功能</li><li>在 3 份文件中手寫</li><li>打字、閱讀與匯出不受限制</li></ul></article><article class="plan reveal featured"><h3>InkLayer 終身版</h3><p class="price">一次購買，沒有訂閱</p><ul><li>每一份文件都能手寫</li><li>之後裝置上的功能更新都包含在內</li><li>iPhone、iPad、Mac 共用一次購買</li></ul></article></div>
+      <p class="plans-note">不論有沒有購買，你寫下的內容都不會被鎖住。價格依你所在地區的 App Store 而定。</p>
+    </section>
+    <section class="closing reveal">
+      <svg class="scribble" style="left:-40px;top:20px" viewBox="0 0 260 120" aria-hidden="true"><path class="ink-stroke" stroke="currentColor" stroke-width="5" d="M8 80c30-60 60-60 70-10s40 40 60-10 50-50 70 0 30 30 44 10"/></svg>
+      <svg class="scribble" style="right:-30px;bottom:10px;transform:scaleX(-1)" viewBox="0 0 260 120" aria-hidden="true"><path class="ink-stroke" stroke="currentColor" stroke-width="5" d="M8 80c30-60 60-60 70-10s40 40 60-10 50-50 70 0 30 30 44 10"/></svg>
+      <h2>從一張畫布開始。</h2>
+      <p>免費下載，不需要帳號，打開就能寫。</p>
+      <div class="cta-row"><a class="store-badge" href="https://apps.apple.com/app/id6824608659"><img src="/assets/img/app-store-badge.svg" alt="在 App Store 下載" width="162" height="54"></a></div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/index.zh-TW.html"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <span>© 2026 voidful</span>
+    <nav aria-label="Footer"><a href="/privacy.zh-TW.html">隱私權政策</a><a href="/support.zh-TW.html">支援</a><a href="mailto:support@eric-lam.com">聯絡我們</a><a href="/" hreflang="en" lang="en">English</a></nav>
+  </div>
+</footer>
 </body>
 </html>

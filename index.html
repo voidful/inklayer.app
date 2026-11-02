@@ -1,117 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#243B35">
-  <meta name="description" content="InkLayer: handwriting, PDFs and Markdown notes on one canvas, in files you own.">
-  <title>InkLayer</title>
-  <link rel="icon" href="/icon.png">
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f4f6f1;
-      --surface: #ffffff;
-      --text: #202521;
-      --muted: #5d6860;
-      --accent: #2f7558;
-      --border: #9aa49b;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #0b1115;
-        --surface: #111a1f;
-        --text: #f4f6f1;
-        --muted: #b3bdb4;
-        --accent: #69c49b;
-        --border: #435049;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InkLayer — Handwriting, PDFs and notes on one canvas</title>
+  <meta name="description" content="InkLayer puts handwriting, PDFs and Markdown notes on one canvas, in files you own. For iPhone, iPad and Mac. No account, no ads, no tracking.">
+  <meta name="theme-color" content="#f5fbf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1e1c" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://inklayer.app/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://inklayer.app/index.zh-TW.html">
+  <link rel="alternate" hreflang="en" href="https://inklayer.app/">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InkLayer">
+  <meta property="og:title" content="InkLayer — Handwriting, PDFs and notes on one canvas">
+  <meta property="og:description" content="InkLayer puts handwriting, PDFs and Markdown notes on one canvas, in files you own. For iPhone, iPad and Mac. No account, no ads, no tracking.">
+  <meta property="og:url" content="https://inklayer.app/">
+  <meta property="og:image" content="https://inklayer.app/assets/img/og-en.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6824608659">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        seen.unobserve(entry.target);
       }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--background);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 32px 20px;
-    }
-
-    main {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin: 0 auto;
-      max-width: 860px;
-      padding: 28px;
-    }
-
-    img {
-      border-radius: 8px;
-      height: 56px;
-      width: 56px;
-    }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.15;
-      margin: 18px 0 8px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin: 28px 0 10px;
-    }
-
-    p,
-    li {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .notice {
-      border-left: 4px solid var(--accent);
-      margin: 22px 0;
-      padding: 10px 14px;
-    }
-
-    .language-links {
-      display: flex;
-      gap: 14px;
-      margin: 18px 0 0;
-    }
-  </style>
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => seen.observe(el));
+});
+</script>
 </head>
 <body>
-  <main>
-    <img src="/icon.png" alt="InkLayer">
-    <h1>InkLayer</h1>
-    <nav class="language-links"><a href="/index.zh-TW.html" hreflang="zh-Hant">繁體中文</a></nav>
-    <p>InkLayer is a note-taking app that puts handwriting, PDFs and Markdown notes on one canvas, in files you own.</p>
-
-    <h2>What it does</h2>
-    <ul>
-      <li><strong>Write on PDFs</strong> with Apple Pencil or a stylus. Your handwriting is kept beside the PDF; the original file is never changed.</li>
-      <li><strong>Markdown notes</strong> with links between notes, backlinks and a graph of how they connect.</li>
-      <li><strong>Layers</strong>: the PDF, typed text, handwriting and images stay separate, so each can be shown, hidden or exported on its own.</li>
-      <li><strong>Canvases</strong> for pages, cards, recordings and flowcharts side by side.</li>
-      <li><strong>Your files, synced your way</strong>: a library is an ordinary folder of Markdown and PDF files. Keep it in iCloud Drive, sync it through your own Google Drive, or use a WebDAV server you choose. InkLayer has no account and no server of its own.</li>
-    </ul>
-
-    <h2>Get InkLayer</h2>
-    <p><a href="https://apps.apple.com/app/id6824608659">InkLayer on the App Store</a> for iPhone, iPad and Mac.</p>
-
-    <p class="notice"><a href="/privacy/">Privacy Policy</a> · <a href="/support/">Support</a> · InkLayer · voidful</p>
-  </main>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <nav class="nav" aria-label="InkLayer"><a href="#features">Features</a><a href="#yours">Your files</a><a href="#pricing">Pricing</a><a href="/support/">Support</a><a class="lang" href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6824608659">Get InkLayer</a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">For iPhone, iPad and Mac</p>
+        <h1>Handwriting, PDFs and notes, on <span class="inked">one canvas<svg class="circle" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><path class="ink-stroke draw" style="--len:1100" stroke="var(--red-ink)" stroke-width="4" vector-effect="non-scaling-stroke" d="M30 22C120 4 300 2 372 22c34 10 30 40-6 54-70 26-250 26-320 8C2 72-6 44 34 26c40-16 110-20 170-18"/></svg></span>.</h1>
+        <p class="lede">InkLayer keeps every layer separate and every file yours: write on PDFs without changing them, link Markdown notes, and lay it all out side by side.</p>
+        <div class="cta-row"><a class="store-badge" href="https://apps.apple.com/app/id6824608659"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a><span class="cta-note">Free to download · No account needed</span></div>
+      </div>
+      <div class="stage">
+        <svg class="arrow" viewBox="0 0 160 120" aria-hidden="true"><path class="ink-stroke draw" style="--len:320" stroke="var(--navy-ink)" stroke-width="4" d="M10 14c40-6 96 6 118 52 6 13 9 26 10 40"/><path class="ink-stroke draw" style="--len:80" stroke="var(--navy-ink)" stroke-width="4" d="M120 92l18 18 12-26"/></svg>
+        <div class="window"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/mac-canvas-en.webp" alt="InkLayer on a Mac: a canvas with notes, a PDF page and handwriting" width="2000" height="1250" fetchpriority="high"></div>
+        <div class="phone"><img src="/assets/img/iphone-pdf-en.webp" alt="InkLayer on iPhone: handwriting on a PDF" width="640" height="1391" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <ul class="promises"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/><path d="M4 4l16 16"/></svg>No account</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5a14 14 0 0 1 5-3"/><path d="M12 5.5a14 14 0 0 1 9.5 4"/><path d="M6 13a9 9 0 0 1 4-2"/><path d="M15.5 12a9 9 0 0 1 2.5 1"/><circle cx="12" cy="18" r="1.2"/><path d="M3 3l18 18"/></svg>Works offline</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.9 8.4-7 10-4.1-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>No ads, no tracking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Files you own</li></ul>
+    <div id="features">
+    <section class="feature reveal" id="pdf">
+      <div class="feature-copy">
+        <p class="kicker">PDF annotation</p>
+        <h2>Write on any PDF. <span class="marker">The original stays untouched.</span></h2>
+        <p>Mark up lecture slides, papers and contracts with Apple Pencil or a stylus. Your handwriting lives beside the PDF, so the file you imported never changes, and exporting puts it all together when you need it.</p>
+        <ul class="checks"><li>Pens, highlighters, shapes and a lasso</li><li>Palm rejection for Apple Pencil</li><li>Handwriting you can search, recognised on the device</li></ul>
+      </div>
+      <div class="media"><div class="tablet"><img src="/assets/img/ipad-pdf-en.webp" alt="InkLayer on iPad: a PDF with handwriting, highlights and drawings" loading="lazy" decoding="async"></div></div>
+    </section><section class="feature reveal flip" id="layers">
+      <div class="feature-copy">
+        <p class="kicker">Layers</p>
+        <h2>Everything is a layer.</h2>
+        <p>The PDF, typed text, handwriting and images stay separate. Hide what you don&#x27;t need, lock what&#x27;s finished, and choose where new ink goes.</p>
+        <ul class="checks"><li>Show, hide and lock each layer</li><li>Drag layers into the order you want</li><li>Export with or without your ink</li></ul>
+      </div>
+      <div class="media"><div class="layers-art" role="img" aria-label="Three layers: a PDF at the bottom, text and images above it, handwriting on top"><svg viewBox="0 0 460 300" aria-hidden="true"><path d="M70 190l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--navy-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="234">PDF</text><path d="M70 120l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--green-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="164">Text &amp; images</text><path d="M70 50l170 0c14 0 22 4 30 12l58 52c6 6 2 10-6 10H150c-12 0-20-4-28-12l-58-52c-6-6-4-10 6-10z" fill="var(--paper)" fill-opacity="0.92" stroke="var(--red-ink)" stroke-width="3.5" stroke-linejoin="round"/><text class="layer-label" x="352" y="94">Handwriting</text><path class="ink-stroke" stroke="var(--red-ink)" stroke-width="3" d="M140 70c12-10 22 8 32-2s22 8 34-2 20 6 30 0"/><path class="ink-stroke" stroke="var(--green-ink)" stroke-width="3" opacity="0.6" d="M150 142h90M162 154h60"/></svg></div></div>
+    </section><section class="feature reveal" id="notes">
+      <div class="feature-copy">
+        <p class="kicker">Markdown notes</p>
+        <h2>Notes that link to each other.</h2>
+        <p>Write in Markdown with links between notes, backlinks, tags and maths. A graph shows how your ideas connect. Every note is an ordinary .md file.</p>
+        <ul class="checks"><li>[[Links]], backlinks and tags</li><li>Inline and display maths</li><li>Handwriting right on the note</li></ul>
+      </div>
+      <div class="media"><div class="window"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/mac-note-en.webp" alt="InkLayer on a Mac: a Markdown note with handwriting" loading="lazy" decoding="async"></div></div>
+    </section><section class="feature reveal flip" id="canvas">
+      <div class="feature-copy">
+        <p class="kicker">Infinite canvas</p>
+        <h2>A desk for all your ideas.</h2>
+        <p>Lay out pages, PDF pages, notes, images, video and recordings side by side on an infinite canvas, then write across all of them. When it&#x27;s time to share, play it as slides.</p>
+        <ul class="checks"><li>Cards you can move, resize and lock</li><li>Paper pages with grids and lines</li><li>Masking tape to quiz yourself</li></ul>
+      </div>
+      <div class="media"><div class="tablet"><img src="/assets/img/ipad-canvas-en.webp" alt="InkLayer on iPad: a canvas of cards, a PDF and a mind map in ink" loading="lazy" decoding="async"></div></div>
+    </section>
+    </div>
+    <section id="yours">
+      <div class="section-head reveal"><h2>Your notes. Your files.</h2><p>There&#x27;s no cloud account to sign up for. A library is a folder on your device, and it stays readable without InkLayer.</p></div>
+      <div class="cards"><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><h3>Yours to keep</h3><p>A library is a folder of Markdown, PDFs and small sidecar files. Open it with other apps; back it up anywhere.</p></article><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.9 8.4-7 10-4.1-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Private by design</h3><p>No account, no ads, no analytics. Handwriting is recognised on the device, and nothing you write is sent to us.</p></article><article class="card reveal"><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.6L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.3 4.6L20 16"/><path d="M20 20v-4h-4"/></svg></div><h3>Sync your way</h3><p>Keep your library in a folder you choose and sync it with your own WebDAV server. iCloud Drive and Google Drive arrive in 1.1.</p><div class="sync-row"><span class="chip">WebDAV</span><span class="chip soon">iCloud Drive</span><span class="chip soon">Google Drive</span></div></article></div>
+    </section>
+    <section>
+      <div class="section-head reveal"><h2>Made for the way you work.</h2></div>
+      <div class="grid"><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/><path d="M14.5 6.5l3 3"/></svg>Apple Pencil</h3><p>Pressure-sensitive ink, palm rejection, and shapes that straighten themselves.</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg>Recordings</h3><p>Record while you write. Play it back and your notes replay with it, stroke by stroke.</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M10 8.5l4 1.8-4 1.7z"/></svg>Present</h3><p>Play PDFs and canvas pages as slides, with a laser pointer.</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7"/><path d="M8.5 11.5h7"/><path d="M8.5 15h4"/></svg>E-ink mode</h3><p>No animation and higher contrast, for e-paper tablets.</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5"/><path d="M8 7.5l4-4 4 4"/><path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Export</h3><p>Export a PDF with your ink, or a canvas as a PDF, an image or a video.</p></article><article class="tile reveal"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>Encrypted backups</h3><p>Export the whole library, optionally encrypted with a passphrase.</p></article></div>
+    </section>
+    <section class="soon-panel reveal" id="next">
+      <span class="badge-11">Coming soon</span>
+      <h2>In InkLayer 1.1</h2>
+      <ul class="soon-list"><li><strong>iCloud Drive and Google Drive sync</strong><span>Keep a library in sync across your devices; when two edits clash, both are kept.</span></li><li><strong>Transcripts</strong><span>Turn recordings into searchable text on the device, and jump to any moment.</span></li><li><strong>Translate PDF text</strong><span>Select text on a PDF and read it in your language, with the system&#x27;s own translation.</span></li><li><strong>Flowcharts</strong><span>Join canvas cards with arrows that follow them as you move them.</span></li><li><strong>Databases</strong><span>Arrange notes in tables you can filter and sort, and export as PDF.</span></li><li><strong>Keyboard shortcuts</strong><span>⌘T for a text box, ⌘/ for every shortcut, and input methods that keep working.</span></li></ul>
+    </section>
+    <section id="pricing">
+      <div class="section-head reveal"><h2>Free to start. Yours for good.</h2><p>Every feature is in the free version. Lifetime removes one limit, once.</p></div>
+      <div class="plans"><article class="plan reveal"><h3>Free</h3><p class="price">Free download</p><ul><li>Every feature</li><li>Handwriting in 3 documents</li><li>Typing, reading and exporting without limits</li></ul></article><article class="plan reveal featured"><h3>InkLayer Lifetime</h3><p class="price">One purchase, no subscription</p><ul><li>Handwriting in every document</li><li>Future on-device feature updates included</li><li>One purchase for iPhone, iPad and Mac</li></ul></article></div>
+      <p class="plans-note">Nothing you write is ever locked, with or without Lifetime. The price is set by your App Store region.</p>
+    </section>
+    <section class="closing reveal">
+      <svg class="scribble" style="left:-40px;top:20px" viewBox="0 0 260 120" aria-hidden="true"><path class="ink-stroke" stroke="currentColor" stroke-width="5" d="M8 80c30-60 60-60 70-10s40 40 60-10 50-50 70 0 30 30 44 10"/></svg>
+      <svg class="scribble" style="right:-30px;bottom:10px;transform:scaleX(-1)" viewBox="0 0 260 120" aria-hidden="true"><path class="ink-stroke" stroke="currentColor" stroke-width="5" d="M8 80c30-60 60-60 70-10s40 40 60-10 50-50 70 0 30 30 44 10"/></svg>
+      <h2>Start on one canvas.</h2>
+      <p>Free to download. No account. Open it and write.</p>
+      <div class="cta-row"><a class="store-badge" href="https://apps.apple.com/app/id6824608659"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a></div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <span>© 2026 voidful</span>
+    <nav aria-label="Footer"><a href="/privacy/">Privacy Policy</a><a href="/support/">Support</a><a href="mailto:support@eric-lam.com">Contact</a><a href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
+  </div>
+</footer>
 </body>
 </html>
