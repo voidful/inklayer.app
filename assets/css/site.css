@@ -733,7 +733,7 @@ section {
   }
 }
 
-/* --- Coming in 1.1 ------------------------------------------------------ */
+/* --- New in the latest version ------------------------------------------ */
 
 .soon-panel {
   position: relative;
@@ -804,6 +804,12 @@ section {
 
 .soon-list strong {
   display: block;
+}
+
+.soon-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
 }
 
 .soon-list span {

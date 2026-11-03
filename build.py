@@ -8,7 +8,7 @@ The privacy policy and support pages come from the published copies in the
 InkLayer repository (`store_assets/public_web/published/`), the same text the
 App Store and Google Play link to, wrapped in this site's header and footer.
 Every claim on the home page must hold for the version in the App Store;
-features of the next version stay under "Coming in InkLayer 1.1".
+the panel near the end lists what the latest version added.
 """
 
 import html
@@ -126,7 +126,7 @@ COPY = {
                 "id": "pdf", "kicker": "PDF annotation",
                 "h2": 'Write on any PDF. <span class="marker">The original stays untouched.</span>',
                 "p": "Mark up lecture slides, papers and contracts with Apple Pencil or a stylus. Your handwriting lives beside the PDF, so the file you imported never changes, and exporting puts it all together when you need it.",
-                "checks": ["Pens, highlighters, shapes and a lasso", "Palm rejection for Apple Pencil", "Handwriting you can search, recognised on the device"],
+                "checks": ["Pens, highlighters, shapes and a lasso", "Select text to copy, translate or quote in a note", "Handwriting you can search, recognised on the device"],
                 "img": "ipad-pdf", "alt": "InkLayer on iPad: a PDF with handwriting, highlights and drawings", "device": "tablet",
             },
             {
@@ -155,29 +155,32 @@ COPY = {
         "yours_p": "There's no cloud account to sign up for. A library is a folder on your device, and it stays readable without InkLayer.",
         "cards": [
             ("folder", "Yours to keep", "A library is a folder of Markdown, PDFs and small sidecar files. Open it with other apps; back it up anywhere."),
-            ("privacy", "Private by design", "No account, no ads, no analytics. Handwriting is recognised on the device, and nothing you write is sent to us."),
-            ("sync", "Sync your way", "Keep your library in a folder you choose and sync it with your own WebDAV server. iCloud Drive and Google Drive arrive in 1.1."),
+            ("privacy", "Private by design", "No account, no ads, no analytics. Handwriting, speech and translation are handled on the device, and nothing you write is sent to us."),
+            ("sync", "Sync your way", "Keep your library in iCloud Drive, or sync it through your own Google Drive or WebDAV server. When two edits clash, both are kept."),
         ],
-        "chips": [("WebDAV", False), ("iCloud Drive", True), ("Google Drive", True)],
+        "chips": [("iCloud Drive", False), ("Google Drive", False), ("WebDAV", False)],
         "grid_h2": "Made for the way you work.",
         "grid": [
             ("pencil", "Apple Pencil", "Pressure-sensitive ink, palm rejection, and shapes that straighten themselves."),
-            ("mic", "Recordings", "Record while you write. Play it back and your notes replay with it, stroke by stroke."),
+            ("mic", "Recordings", "Record while you write and your notes replay with it, stroke by stroke. A transcript makes every word searchable."),
             ("present", "Present", "Play PDFs and canvas pages as slides, with a laser pointer."),
             ("eink", "E-ink mode", "No animation and higher contrast, for e-paper tablets."),
             ("export", "Export", "Export a PDF with your ink, or a canvas as a PDF, an image or a video."),
             ("lock", "Encrypted backups", "Export the whole library, optionally encrypted with a passphrase."),
         ],
-        "soon_badge": "Coming soon",
-        "soon_h2": "In InkLayer 1.1",
+        "soon_badge": "New",
+        "soon_h2": "InkLayer 1.1",
         "soon": [
             ("iCloud Drive and Google Drive sync", "Keep a library in sync across your devices; when two edits clash, both are kept."),
-            ("Transcripts", "Turn recordings into searchable text on the device, and jump to any moment."),
-            ("Translate PDF text", "Select text on a PDF and read it in your language, with the system's own translation."),
+            ("PDF text into notes", "Select text to copy, translate or add to a note, or circle a passage with the lasso to quote it with its page."),
+            ("Transcripts and live captions", "Turn recordings into searchable text on the device, tap a sentence to hear it, and follow a class with live captions."),
+            ("Search inside PDFs", "Library search now finds the text of your PDFs and your recording transcripts."),
             ("Flowcharts", "Join canvas cards with arrows that follow them as you move them."),
-            ("Databases", "Arrange notes in tables you can filter and sort, and export as PDF."),
-            ("Keyboard shortcuts", "⌘T for a text box, ⌘/ for every shortcut, and input methods that keep working."),
+            ("Databases", "Arrange documents in tables you can filter and sort, and export them as one PDF."),
+            ("Writing feel", "Finer brushes, and ink that keeps closer to the tip of your pen."),
+            ("Your toolbar, your keys", "Choose the tools you see. ⌘T adds a text box, ⌘/ lists every shortcut, and input methods keep working."),
         ],
+        "soon_note": "Out now on iPhone and iPad; the Mac update is in App Review. Transcripts and live captions need iOS, iPadOS or macOS 26; translation needs iOS or iPadOS 18, or macOS 15.",
         "pricing_h2": "Free to start. Yours for good.",
         "pricing_p": "Every feature is in the free version. Lifetime removes one limit, once.",
         "plans": [
@@ -214,7 +217,7 @@ COPY = {
                 "id": "pdf", "kicker": "PDF 註記",
                 "h2": '在任何 PDF 上書寫，<span class="marker">原檔一字不改。</span>',
                 "p": "用 Apple Pencil 或觸控筆標註講義、論文與合約。手寫存在 PDF 旁邊，匯入的檔案永遠不會被修改；需要時再匯出合在一起的 PDF。",
-                "checks": ["原子筆、螢光筆、形狀與套索", "Apple Pencil 防誤觸", "在裝置上辨識手寫，可以搜尋"],
+                "checks": ["原子筆、螢光筆、形狀與套索", "選取文字，拷貝、翻譯或引用到筆記", "在裝置上辨識手寫，可以搜尋"],
                 "img": "ipad-pdf", "alt": "iPad 上的 InkLayer：有手寫、螢光筆與圖畫的 PDF", "device": "tablet",
             },
             {
@@ -243,29 +246,32 @@ COPY = {
         "yours_p": "沒有雲端帳號要你註冊。筆記庫就是你裝置上的一個資料夾，不開 InkLayer 也讀得到。",
         "cards": [
             ("folder", "永遠是你的", "筆記庫是由 Markdown、PDF 與小小的附屬檔組成的資料夾。其他 App 也打得開，想備份到哪裡都可以。"),
-            ("privacy", "從設計就重視隱私", "沒有帳號、沒有廣告、沒有分析。手寫在裝置上辨識，你寫的內容不會傳給我們。"),
-            ("sync", "用你的方式同步", "把筆記庫放在你選的資料夾，用你自己的 WebDAV 伺服器同步。1.1 起也能透過 iCloud 雲碟與 Google 雲端硬碟。"),
+            ("privacy", "從設計就重視隱私", "沒有帳號、沒有廣告、沒有分析。手寫辨識、語音轉文字與翻譯都在裝置上完成，你寫的內容不會傳給我們。"),
+            ("sync", "用你的方式同步", "把筆記庫放在 iCloud 雲碟，或透過你自己的 Google 雲端硬碟、WebDAV 伺服器同步。兩邊同時修改時，兩個版本都會保留。"),
         ],
-        "chips": [("WebDAV", False), ("iCloud 雲碟", True), ("Google 雲端硬碟", True)],
+        "chips": [("iCloud 雲碟", False), ("Google 雲端硬碟", False), ("WebDAV", False)],
         "grid_h2": "細節裡的用心。",
         "grid": [
             ("pencil", "Apple Pencil", "感壓筆觸、防誤觸，畫好的形狀會自動修整。"),
-            ("mic", "錄音", "邊寫邊錄。播放時，筆記會跟著聲音一筆一筆重現。"),
+            ("mic", "錄音", "邊寫邊錄，播放時筆記會跟著聲音一筆一筆重現；逐字稿讓每句話都搜尋得到。"),
             ("present", "簡報", "把 PDF 與畫布頁面當投影片播放，還有雷射筆。"),
             ("eink", "電子紙模式", "關閉動畫、提高對比，適合電子紙平板。"),
             ("export", "匯出", "匯出含手寫的 PDF，或把畫布匯出成 PDF、圖片或影片。"),
             ("lock", "加密備份", "整個筆記庫一次匯出，也可以用密碼加密。"),
         ],
-        "soon_badge": "即將推出",
+        "soon_badge": "新功能",
         "soon_h2": "InkLayer 1.1",
         "soon": [
             ("iCloud 雲碟與 Google 雲端硬碟同步", "在多台裝置間同步筆記庫；兩邊同時修改時，兩個版本都會保留。"),
-            ("錄音逐字稿", "在裝置上把錄音轉成可以搜尋的文字，點一下就跳到那一刻。"),
-            ("翻譯 PDF 文字", "選取 PDF 上的文字，用系統內建的翻譯直接看懂。"),
+            ("PDF 文字擷取到筆記", "選取文字就能拷貝、翻譯或加到筆記；用套索圈住一段，連同頁碼引用到筆記。"),
+            ("逐字稿與即時字幕", "在裝置上把錄音轉成可以搜尋的文字，點一句就從那裡播放；上課時開即時字幕。"),
+            ("搜尋 PDF 內文", "筆記庫搜尋也找得到 PDF 裡的文字和錄音逐字稿。"),
             ("流程圖", "用箭頭連起畫布上的卡片，移動卡片時箭頭會跟著走。"),
-            ("資料庫", "用表格整理筆記，可以篩選、排序，並匯出成 PDF。"),
-            ("鍵盤快速鍵", "⌘T 開文字框、⌘/ 看所有快速鍵，打注音也不會被打斷。"),
+            ("資料庫", "用表格整理文件，可以篩選、排序，並合成一份 PDF 匯出。"),
+            ("書寫手感", "筆刷可以調得更細，筆跡更貼近筆尖。"),
+            ("你的工具列與快速鍵", "自己決定工具列放哪些工具。⌘T 開文字框、⌘/ 看所有快速鍵，打注音也不會被打斷。"),
         ],
+        "soon_note": "iPhone 與 iPad 已可更新，Mac 版正在審核。逐字稿與即時字幕需要 iOS、iPadOS 或 macOS 26；翻譯需要 iOS／iPadOS 18 或 macOS 15。",
         "pricing_h2": "先免費用，喜歡再買斷。",
         "pricing_p": "免費版就有所有功能。終身版只解除一個限制，一次就好。",
         "plans": [
@@ -437,6 +443,7 @@ def home(c: dict) -> str:
       <span class="badge-11">{html.escape(c['soon_badge'])}</span>
       <h2>{html.escape(c['soon_h2'])}</h2>
       <ul class="soon-list">{soon}</ul>
+      {f'<p class="soon-note">{html.escape(c["soon_note"])}</p>' if c.get("soon_note") else ""}
     </section>
     <section id="pricing">
       <div class="section-head reveal"><h2>{html.escape(c['pricing_h2'])}</h2><p>{html.escape(c['pricing_p'])}</p></div>
