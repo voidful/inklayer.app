@@ -1,6 +1,13 @@
 'use strict';
 
-const CACHE_VERSION = 'inklayer-pwa-v2';
+// Each build stamps its own BUILD (tool/build_web_app.sh,
+// tool/build_web_viewer.sh), so a release replaces the cached code instead
+// of serving the last one. Caches are named for this worker's scope (/app/,
+// /viewer/), so the app and the viewer on one site keep theirs apart.
+const BUILD = '20261104000458';
+const SCOPE = new URL(self.registration.scope).pathname;
+const CACHE_PREFIX = `inklayer-pwa-${SCOPE}`;
+const CACHE_VERSION = `${CACHE_PREFIX}${BUILD}`;
 const APP_SHELL = [
   './',
   './index.html',
@@ -22,8 +29,14 @@ const APP_SHELL = [
 ];
 
 self.addEventListener('install', (event) => {
+  // Pages a build leaves out (the app and the viewer link to the site's own
+  // legal pages) are skipped rather than failing the install.
   event.waitUntil(
-    caches.open(CACHE_VERSION).then((cache) => cache.addAll(APP_SHELL)),
+    caches
+      .open(CACHE_VERSION)
+      .then((cache) =>
+        Promise.all(APP_SHELL.map((url) => cache.add(url).catch(() => {}))),
+      ),
   );
   self.skipWaiting();
 });
@@ -37,7 +50,9 @@ self.addEventListener('activate', (event) => {
           keys
             .filter(
               (key) =>
-                key.startsWith('inklayer-pwa-') && key !== CACHE_VERSION,
+                (key.startsWith(CACHE_PREFIX) && key !== CACHE_VERSION) ||
+                // Caches from before they were named for their scope.
+                /^inklayer-pwa-v\d+$/.test(key),
             )
             .map((key) => caches.delete(key)),
         ),
@@ -66,31 +81,31 @@ self.addEventListener('fetch', (event) => {
 });
 
 async function networkFirstPage(request) {
+  const cache = await caches.open(CACHE_VERSION);
   try {
     const response = await fetch(request);
     if (response.ok) {
-      const cache = await caches.open(CACHE_VERSION);
       await cache.put(request, response.clone());
     }
     return response;
   } catch (_) {
     return (
-      (await caches.match(request)) ||
-      (await caches.match('./index.html')) ||
-      (await caches.match('./offline.html'))
+      (await cache.match(request)) ||
+      (await cache.match('./index.html')) ||
+      (await cache.match('./offline.html'))
     );
   }
 }
 
 async function cacheFirstAsset(request) {
-  const cached = await caches.match(request);
+  const cache = await caches.open(CACHE_VERSION);
+  const cached = await cache.match(request);
   if (cached) {
     return cached;
   }
 
   const response = await fetch(request);
   if (response.ok && shouldCache(request)) {
-    const cache = await caches.open(CACHE_VERSION);
     await cache.put(request, response.clone());
   }
   return response;
