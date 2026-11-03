@@ -83,10 +83,11 @@ addEventListener('DOMContentLoaded', () => {
 
     <h2>Google 使用者資料</h2>
     <p>當你登入 Google 時，InkLayer 只要求一項權限：查看與管理 InkLayer 自己在你 Google 雲端硬碟中建立的檔案（<code>drive.file</code> 權限範圍）。它看不到、也無法更動你雲端硬碟裡的其他任何檔案。</p>
+    <p>如果你和別人共享筆記庫，或打開別人和你共享的筆記庫，InkLayer 會再要求一次權限：存取你的 Google 雲端硬碟（<code>drive</code> 權限範圍），因為共享的筆記庫裡有其他人的 InkLayer 建立的檔案。即使如此，InkLayer 也只在 InkLayer 筆記庫資料夾裡讀寫（它為你的筆記庫建立的資料夾，以及別人和你共享的筆記庫資料夾），不會打開、列出或更動你的其他檔案。</p>
     <ul>
-      <li><strong>InkLayer 存取的資料：</strong>你選擇同步的筆記庫檔案（位於你 Google 雲端硬碟的 InkLayer 資料夾），以及你 Google 帳號的 email 地址。</li>
-      <li><strong>用途：</strong>只用來在你的裝置之間同步這些筆記庫（建立、讀取、更新其檔案，或移到雲端硬碟的垃圾桶）、在網頁檢視器中顯示它們（只讀取），以及顯示筆記庫和哪個 Google 帳號同步。</li>
-      <li><strong>資料去向：</strong>只在你的裝置與 Google 之間傳送；網頁檢視器會在你的瀏覽器留一份副本，直到你移除。開發者不會收到。InkLayer 不販售 Google 使用者資料，不分享或轉移給任何人，不用於廣告，也不用於訓練 AI 或機器學習模型。</li>
+      <li><strong>InkLayer 存取的資料：</strong>你選擇同步的筆記庫檔案（位於你 Google 雲端硬碟的 InkLayer 資料夾），以及你 Google 帳號的 email 地址。如果你共享筆記庫：別人和你共享的筆記庫資料夾，以及筆記庫共享對象的名字和 email 地址。</li>
+      <li><strong>用途：</strong>只用來在你的裝置之間、以及和你共享的人之間同步這些筆記庫（建立、讀取、更新其檔案，或移到雲端硬碟的垃圾桶）、把筆記庫共享給你邀請的人並顯示共享對象、在網頁檢視器中顯示你的筆記庫（只讀取），以及顯示筆記庫和哪個 Google 帳號同步。</li>
+      <li><strong>資料去向：</strong>只在你的裝置與 Google 之間傳送；網頁檢視器會在你的瀏覽器留一份副本，直到你移除。你為了邀請別人而輸入的 email 地址會送到 Google，由 Google 寄出邀請。開發者不會收到任何這些資料。InkLayer 不販售 Google 使用者資料，不分享或轉移給任何人，不用於廣告，也不用於訓練 AI 或機器學習模型。</li>
       <li><strong>停止使用：</strong>在「設定 › 同步 › Google 雲端硬碟 › 登出」會移除裝置上的登入並撤銷 InkLayer 的存取權（網頁檢視器則是「帳號 › 登出並從這個瀏覽器移除」）；也可以在 <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> 移除。檔案會留在你的 Google 雲端硬碟，直到你在那裡刪除。</li>
     </ul>
     <p>InkLayer 對於從 Google API 取得之資訊的使用與轉移，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服務使用者資料政策</a>，包括「有限使用」規定。</p>
