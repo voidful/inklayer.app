@@ -153,6 +153,7 @@ COPY = {
         ],
         "yours_h2": "Your notes. Your files.",
         "yours_p": "There's no cloud account to sign up for. A library is a folder on your device, and it stays readable without InkLayer.",
+        "yours_link": ("/format/", "How the files are stored"),
         "cards": [
             ("folder", "Yours to keep", "A library is a folder of Markdown, PDFs and small sidecar files. Open it with other apps; back it up anywhere."),
             ("privacy", "Private by design", "No account, no ads, no analytics. Handwriting, speech and translation are handled on the device, and nothing you write is sent to us."),
@@ -244,6 +245,7 @@ COPY = {
         ],
         "yours_h2": "你的筆記，你的檔案。",
         "yours_p": "沒有雲端帳號要你註冊。筆記庫就是你裝置上的一個資料夾，不開 InkLayer 也讀得到。",
+        "yours_link": ("/format.zh-TW.html", "檔案怎麼存"),
         "cards": [
             ("folder", "永遠是你的", "筆記庫是由 Markdown、PDF 與小小的附屬檔組成的資料夾。其他 App 也打得開，想備份到哪裡都可以。"),
             ("privacy", "從設計就重視隱私", "沒有帳號、沒有廣告、沒有分析。手寫辨識、語音轉文字與翻譯都在裝置上完成，你寫的內容不會傳給我們。"),
@@ -432,7 +434,7 @@ def home(c: dict) -> str:
     {''.join(features)}
     </div>
     <section id="yours">
-      <div class="section-head reveal"><h2>{html.escape(c['yours_h2'])}</h2><p>{html.escape(c['yours_p'])}</p></div>
+      <div class="section-head reveal"><h2>{html.escape(c['yours_h2'])}</h2><p>{html.escape(c['yours_p'])} <a href="{c['yours_link'][0]}">{html.escape(c['yours_link'][1])}</a></p></div>
       <div class="cards">{''.join(cards)}</div>
     </section>
     <section>
@@ -520,6 +522,9 @@ def main() -> None:
     write("support/index.html", support)
     write("support.html", support)
     write("support.zh-TW.html", legal("inklayer_support_zh-TW.html", zh, "/support.zh-TW.html", "/support/"))
+    fmt = legal("inklayer_format.html", en, "/format/", "/format.zh-TW.html")
+    write("format/index.html", fmt)
+    write("format.zh-TW.html", legal("inklayer_format_zh-TW.html", zh, "/format.zh-TW.html", "/format/"))
     write("404.html", legal_404(en))
     print("built", SITE)
 

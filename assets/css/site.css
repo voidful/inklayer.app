@@ -992,6 +992,15 @@ section {
   margin: 10px 0 18px;
 }
 
+.doc pre {
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--mint-soft);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .doc .notice {
   border-left: 4px solid var(--green-ink);
   padding: 8px 14px;

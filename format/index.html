@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InkLayer File Format</title>
+  <meta name="description" content="How InkLayer stores notes, canvases, PDFs and handwriting: open formats in an ordinary folder.">
+  <meta name="theme-color" content="#f5fbf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1e1c" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://inklayer.app/format/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://inklayer.app/format.zh-TW.html">
+  <link rel="alternate" hreflang="en" href="https://inklayer.app/format/">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InkLayer">
+  <meta property="og:title" content="InkLayer File Format">
+  <meta property="og:description" content="How InkLayer stores notes, canvases, PDFs and handwriting: open formats in an ordinary folder.">
+  <meta property="og:url" content="https://inklayer.app/format/">
+  <meta property="og:image" content="https://inklayer.app/assets/img/og-en.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6824608659">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        seen.unobserve(entry.target);
+      }
+    }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => seen.observe(el));
+});
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <nav class="nav" aria-label="InkLayer"><a href="/#features">Features</a><a href="/#yours">Your files</a><a href="/#pricing">Pricing</a><a href="/support/">Support</a><a class="lang" href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6824608659">Get InkLayer</a>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <article class="doc">
+  <h1>InkLayer file format</h1>
+  <p class="updated">Version 1 · 4 November 2026</p>
+  <p>An InkLayer library is an ordinary folder. Notes are Markdown files, canvases are JSON Canvas files, and PDFs stay exactly as they were. Handwriting and layers are kept beside them in plain JSON. Any app can open these files, and nothing needs InkLayer to read. This page describes version 1 (<code>"schemaVersion": 1</code>).</p>
+
+  <h2>The library folder</h2>
+  <pre><code>My Library/
+  Notes/
+    Physics.md                 a note
+    Physics.ink/               its handwriting, beside it
+    Lecture board.canvas       a canvas (JSON Canvas)
+  PDFs/
+    Attention.pdf              never modified
+    Attention.pdf.ink/         its annotations
+  Attachments/
+    images/  audio/  videos/  exports/
+  .inklayer/
+    manifest.json              the library's id and name
+    folders.json               the folders shown in the library
+    favorites.json  signatures.json  tool_presets.json
+    devices/                   one file per device
+    sync.nosync/  cache.nosync/   this device only; safe to delete</code></pre>
+  <p>Paths are relative to the library and use <code>/</code>. Folders ending in <code>.nosync</code> hold one device's caches and sync state: they are never synced, and deleting them loses nothing (InkLayer rebuilds them).</p>
+
+  <h2>Notes</h2>
+  <p>Markdown (CommonMark with GitHub tables and task lists), as Obsidian writes it: <code>[[wikilinks]]</code> and <code>[[Note|label]]</code>, images as <code>![](Attachments/images/…)</code>, LaTeX between <code>$…$</code> and <code>$$…$$</code>, and fenced <code>```graph</code> blocks that InkLayer draws as graphs (other apps show them as code).</p>
+
+  <h2>Canvases and mind maps</h2>
+  <p>A <code>.canvas</code> file is <a href="https://jsoncanvas.org">JSON Canvas 1.0</a>, the format Obsidian Canvas uses. InkLayer's additions sit in an <code>"inklayer"</code> object on a card (paper patterns, tape) or in <code>"inklayerMindMap": true</code> on a mind map's cards and lines; other apps ignore them. Handwriting on a canvas is in <code>&lt;name&gt;.canvas.ink/</code>.</p>
+
+  <h2>PDFs</h2>
+  <p>A PDF file is never changed. Everything written on it lives in the folder beside it, <code>&lt;name&gt;.pdf.ink/</code>:</p>
+  <ul>
+    <li><code>document.json</code>: the document's id and pages.</li>
+    <li><code>pages/page_0001.layers.json</code>: the page's layers.</li>
+    <li><code>pages/page_0001.inklog.bin</code>: the page's handwriting (below).</li>
+    <li><code>text_boxes.json</code>, <code>outline.json</code> (your own contents), <code>review.json</code> (pages marked for review), <code>page_list.json</code> (page order), <code>recordings.json</code>.</li>
+    <li><code>pdf_text.json</code>: the PDF's text for search, scanned pages read on the device. An index only: deleting it is safe.</li>
+  </ul>
+
+  <h2>Layers</h2>
+  <p>Each page lists its layers bottom to top, each with an id, a type (<code>pdf_background</code>, <code>template</code>, <code>markdown</code>, <code>ink</code>, <code>shape</code>, <code>image</code>, <code>video</code> or <code>ai_overlay</code>), a name, <code>zIndex</code>, <code>visible</code>, <code>locked</code> and <code>opacity</code>.</p>
+
+  <h2>Handwriting</h2>
+  <p>Handwriting is an append-only log: one JSON object per line, never rewritten. Each line adds a stroke or removes one:</p>
+  <pre><code>{"schemaVersion":1,"op":"add_stroke","opId":"op_…","deviceId":"…","clock":10291,
+ "createdAt":"2026-11-04T12:00:00.000Z",
+ "stroke":{"strokeId":"stroke_…","layerId":"layer_…","pageIndex":0,"tool":"pen",
+  "brush":{"color":"#111111","width":3.5,"opacity":1,"blendMode":"normal","kind":"fountain"},
+  "points":[{"x":129.3,"y":391.2,"t":0,"pressure":0.41,"tiltX":0.1,"tiltY":0.2}]}}
+{"schemaVersion":1,"op":"tombstone_stroke","opId":"op_…","deviceId":"…","clock":10292,
+ "createdAt":"…","layerId":"layer_…","strokeId":"stroke_…"}</code></pre>
+  <ul>
+    <li>Points are in page units, not screen pixels. <code>t</code> is milliseconds from the stroke's start; <code>pressure</code> is 0 to 1; <code>tiltX</code> and <code>tiltY</code> follow the W3C Pointer Events convention in radians; <code>roll</code> is a pen's barrel roll in radians (Apple Pencil Pro). Each is left out when the pen doesn't report it.</li>
+    <li>Tools: <code>pen</code>, <code>highlighter</code>, <code>line</code>, <code>rectangle</code>, <code>ellipse</code>, <code>arrow</code>, <code>polygon</code>. Pen types (<code>kind</code>): <code>ballpoint</code>, <code>fountain</code>, <code>brush_pen</code>, <code>pencil</code>, <code>marker</code>, <code>calligraphy</code>, <code>highlighter</code>.</li>
+    <li>Editing never changes a line: moving or resizing ink removes the old strokes and adds new ones. Two devices' logs merge by keeping every operation once (by <code>opId</code>); a removal wins over the stroke it removes.</li>
+  </ul>
+
+  <h2>Compatibility</h2>
+  <p>Every saved object carries <code>schemaVersion</code>. New optional fields may appear within version 1, and readers ignore fields they don't know. New values can appear too (a new pen type, say), which older versions of InkLayer may not open; this page lists them as they arrive.</p>
+
+</article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
+    <span>© 2026 voidful</span>
+    <nav aria-label="Footer"><a href="/viewer/">Web Viewer</a><a href="/privacy/">Privacy Policy</a><a href="/support/">Support</a><a href="mailto:support@eric-lam.com">Contact</a><a href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
+  </div>
+</footer>
+</body>
+</html>
