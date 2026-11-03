@@ -190,7 +190,7 @@ COPY = {
         "plans_note": "Nothing you write is ever locked, with or without Lifetime. The price is set by your App Store region.",
         "closing_h2": "Start on one canvas.",
         "closing_p": "Free to download. No account. Open it and write.",
-        "footer": [("/privacy/", "Privacy Policy"), ("/support/", "Support"), (f"mailto:{SUPPORT_EMAIL}", "Contact")],
+        "footer": [("/viewer/", "Web Viewer"), ("/privacy/", "Privacy Policy"), ("/support/", "Support"), (f"mailto:{SUPPORT_EMAIL}", "Contact")],
         "skip": "Skip to content",
     },
     "zh": {
@@ -281,7 +281,7 @@ COPY = {
         "plans_note": "不論有沒有購買，你寫下的內容都不會被鎖住。價格依你所在地區的 App Store 而定。",
         "closing_h2": "從一張畫布開始。",
         "closing_p": "免費下載，不需要帳號，打開就能寫。",
-        "footer": [("/privacy.zh-TW.html", "隱私權政策"), ("/support.zh-TW.html", "支援"), (f"mailto:{SUPPORT_EMAIL}", "聯絡我們")],
+        "footer": [("/viewer/", "網頁檢視器"), ("/privacy.zh-TW.html", "隱私權政策"), ("/support.zh-TW.html", "支援"), (f"mailto:{SUPPORT_EMAIL}", "聯絡我們")],
         "skip": "跳到內容",
     },
 }

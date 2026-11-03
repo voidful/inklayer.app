@@ -51,7 +51,7 @@ addEventListener('DOMContentLoaded', () => {
     <article class="doc">
     <h1>InkLayer Privacy Policy</h1>
     <nav class="language-links"><a href="/privacy.zh-TW.html" hreflang="zh-Hant">繁體中文</a></nav>
-    <p>Effective 2 November 2026. Publisher: voidful.</p>
+    <p>Effective 3 November 2026. Publisher: voidful.</p>
 
     <h2>Summary</h2>
     <p>InkLayer is a note-taking app for handwriting, PDFs and Markdown. Your notes stay on your device, in ordinary files you can also open with other apps. InkLayer has no account, no advertising, no analytics or tracking, and no crash-reporting service. The developer does not receive your notes, your files, or information about how you use the app.</p>
@@ -75,6 +75,7 @@ addEventListener('DOMContentLoaded', () => {
     <ul>
       <li><strong>WebDAV sync</strong>, if you set it up, sends your library files to the WebDAV server you chose, and only there. Whoever runs that server handles the data under their own policy.</li>
       <li><strong>Google Drive sync</strong>, if you sign in with Google and choose to sync a library there, moves that library's files directly between your devices and your own Google Drive (My Drive › InkLayer). There is no InkLayer server in between. See "Google user data" below.</li>
+      <li><strong>The web viewer</strong> (<a href="https://inklayer.app/viewer/">inklayer.app/viewer</a>), if you sign in there with Google, reads the libraries you sync to Google Drive and shows them in your browser; it never changes them. It keeps a copy of each library you open in that browser's storage, so it opens faster next time. Account › Sign Out and Remove from This Browser deletes that copy and signs out; the libraries stay in your Google Drive.</li>
       <li><strong>InkLayer Lifetime</strong> is bought through the App Store (or Google Play on Android). The store processes the payment; InkLayer never receives your payment details, name or email.</li>
       <li>Links you tap open in your browser.</li>
     </ul>
@@ -84,9 +85,9 @@ addEventListener('DOMContentLoaded', () => {
     <p>When you sign in with Google, InkLayer asks for one permission: to see and manage the files InkLayer itself creates in your Google Drive (the <code>drive.file</code> scope). It cannot see or change any other file in your Drive.</p>
     <ul>
       <li><strong>What InkLayer accesses:</strong> the files of the libraries you choose to sync, in the InkLayer folder of your Google Drive, and your Google account's email address.</li>
-      <li><strong>How it is used:</strong> only to sync those libraries between your devices (creating, reading, updating and moving to the Drive trash their files) and to show which Google account a library syncs with.</li>
-      <li><strong>Where it goes:</strong> only between your device and Google. The developer never receives it. InkLayer does not sell Google user data, does not share or transfer it to anyone, does not use it for advertising, and does not use it to train AI or machine-learning models.</li>
-      <li><strong>Stopping:</strong> Settings › Sync › Google Drive › Sign Out removes the sign-in from the device and withdraws InkLayer's access; you can also remove it at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. The files stay in your Google Drive until you delete them there.</li>
+      <li><strong>How it is used:</strong> only to sync those libraries between your devices (creating, reading, updating and moving to the Drive trash their files), to show them in the web viewer (reading only), and to show which Google account a library syncs with.</li>
+      <li><strong>Where it goes:</strong> only between your device and Google; the web viewer keeps a copy in your browser until you remove it. The developer never receives it. InkLayer does not sell Google user data, does not share or transfer it to anyone, does not use it for advertising, and does not use it to train AI or machine-learning models.</li>
+      <li><strong>Stopping:</strong> Settings › Sync › Google Drive › Sign Out removes the sign-in from the device and withdraws InkLayer's access (in the web viewer, Account › Sign Out and Remove from This Browser); you can also remove it at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. The files stay in your Google Drive until you delete them there.</li>
     </ul>
     <p>InkLayer's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
@@ -110,7 +111,7 @@ addEventListener('DOMContentLoaded', () => {
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/img/icon-128.png" alt="" width="34" height="34">InkLayer</a>
     <span>© 2026 voidful</span>
-    <nav aria-label="Footer"><a href="/privacy/">Privacy Policy</a><a href="/support/">Support</a><a href="mailto:support@eric-lam.com">Contact</a><a href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
+    <nav aria-label="Footer"><a href="/viewer/">Web Viewer</a><a href="/privacy/">Privacy Policy</a><a href="/support/">Support</a><a href="mailto:support@eric-lam.com">Contact</a><a href="/index.zh-TW.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>
 </body>

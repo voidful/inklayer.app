@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#243B35">
+  <title>InkLayer Offline</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f4f6f1;
+      --text: #202521;
+      --muted: #5d6860;
+      --accent: #2f7558;
+      --border: #9aa49b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0b1115;
+        --text: #f4f6f1;
+        --muted: #b3bdb4;
+        --accent: #69c49b;
+        --border: #435049;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      align-items: center;
+      background: var(--background);
+      color: var(--text);
+      display: flex;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      justify-content: center;
+      margin: 0;
+      min-height: 100vh;
+      padding: 32px;
+    }
+
+    main {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      max-width: 520px;
+      padding: 28px;
+      width: 100%;
+    }
+
+    img {
+      border-radius: 8px;
+      height: 64px;
+      width: 64px;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="icons/Icon-192.png" alt="InkLayer app icon">
+    <h1>InkLayer is offline</h1>
+    <p>
+      Reconnect to load the app shell. Vault files remain local-first on this
+      device, and sync will resume only after you open InkLayer again.
+    </p>
+    <a href="./">Try opening InkLayer again</a>
+  </main>
+</body>
+</html>
