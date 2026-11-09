@@ -4,7 +4,7 @@
 // tool/build_web_viewer.sh), so a release replaces the cached code instead
 // of serving the last one. Caches are named for this worker's scope (/app/,
 // /viewer/), so the app and the viewer on one site keep theirs apart.
-const BUILD = '20261104000458';
+const BUILD = '20261109155327';
 const SCOPE = new URL(self.registration.scope).pathname;
 const CACHE_PREFIX = `inklayer-pwa-${SCOPE}`;
 const CACHE_VERSION = `${CACHE_PREFIX}${BUILD}`;

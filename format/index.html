@@ -73,10 +73,10 @@ addEventListener('DOMContentLoaded', () => {
   <p>Paths are relative to the library and use <code>/</code>. Folders ending in <code>.nosync</code> hold one device's caches and sync state: they are never synced, and deleting them loses nothing (InkLayer rebuilds them).</p>
 
   <h2>Notes</h2>
-  <p>Markdown (CommonMark with GitHub tables and task lists), as Obsidian writes it: <code>[[wikilinks]]</code> and <code>[[Note|label]]</code>, images as <code>![](Attachments/images/…)</code>, LaTeX between <code>$…$</code> and <code>$$…$$</code>, and fenced <code>```graph</code> blocks that InkLayer draws as graphs (other apps show them as code).</p>
+  <p>Markdown (CommonMark with GitHub tables and task lists), as Obsidian writes it: <code>[[wikilinks]]</code> and <code>[[Note|label]]</code> (a link to a PDF page is <code>[[file.pdf#page=4|label]]</code>), images as <code>![](Attachments/images/…)</code>, LaTeX between <code>$…$</code> and <code>$$…$$</code>, and fenced <code>```graph</code> blocks that InkLayer draws as graphs (other apps show them as code).</p>
 
   <h2>Canvases and mind maps</h2>
-  <p>A <code>.canvas</code> file is <a href="https://jsoncanvas.org">JSON Canvas 1.0</a>, the format Obsidian Canvas uses. InkLayer's additions sit in an <code>"inklayer"</code> object on a card (paper patterns, tape) or in <code>"inklayerMindMap": true</code> on a mind map's cards and lines; other apps ignore them. Handwriting on a canvas is in <code>&lt;name&gt;.canvas.ink/</code>.</p>
+  <p>A <code>.canvas</code> file is <a href="https://jsoncanvas.org">JSON Canvas 1.0</a>, the format Obsidian Canvas uses. InkLayer's additions sit in an <code>"inklayer"</code> object on a card (paper patterns, tape, <code>"link": true</code> for a file shown as a link) or in <code>"inklayerMindMap": true</code> on a mind map's cards and lines; other apps ignore them. Handwriting on a canvas is in <code>&lt;name&gt;.canvas.ink/</code>.</p>
 
   <h2>PDFs</h2>
   <p>A PDF file is never changed. Everything written on it lives in the folder beside it, <code>&lt;name&gt;.pdf.ink/</code>:</p>
@@ -84,7 +84,7 @@ addEventListener('DOMContentLoaded', () => {
     <li><code>document.json</code>: the document's id and pages.</li>
     <li><code>pages/page_0001.layers.json</code>: the page's layers.</li>
     <li><code>pages/page_0001.inklog.bin</code>: the page's handwriting (below).</li>
-    <li><code>text_boxes.json</code>, <code>outline.json</code> (your own contents), <code>review.json</code> (pages marked for review), <code>page_list.json</code> (page order), <code>recordings.json</code>.</li>
+    <li><code>text_boxes.json</code>, <code>outline.json</code> (your own contents), <code>review.json</code> (pages marked for review, and when each comes up again), <code>page_list.json</code> (page order), <code>recordings.json</code>.</li>
     <li><code>pdf_text.json</code>: the PDF's text for search, scanned pages read on the device. An index only: deleting it is safe.</li>
   </ul>
 

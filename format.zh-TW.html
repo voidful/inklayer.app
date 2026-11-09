@@ -73,10 +73,10 @@ addEventListener('DOMContentLoaded', () => {
   <p>路徑都相對於筆記庫，以 <code>/</code> 分隔。名稱以 <code>.nosync</code> 結尾的資料夾存放單一裝置的快取與同步狀態：不會被同步，刪掉也不會遺失任何內容（InkLayer 會重建）。</p>
 
   <h2>筆記</h2>
-  <p>Markdown（CommonMark，加上 GitHub 的表格與待辦清單），和 Obsidian 的寫法相同：<code>[[維基連結]]</code>與 <code>[[筆記|顯示文字]]</code>、以 <code>![](Attachments/images/…)</code> 插入的圖片、<code>$…$</code> 與 <code>$$…$$</code> 之間的 LaTeX，以及 InkLayer 會畫成圖形的 <code>```graph</code> 區塊（其他 App 會顯示成程式碼）。</p>
+  <p>Markdown（CommonMark，加上 GitHub 的表格與待辦清單），和 Obsidian 的寫法相同：<code>[[維基連結]]</code>與 <code>[[筆記|顯示文字]]</code>（連到 PDF 某一頁寫成 <code>[[檔案.pdf#page=4|顯示文字]]</code>）、以 <code>![](Attachments/images/…)</code> 插入的圖片、<code>$…$</code> 與 <code>$$…$$</code> 之間的 LaTeX，以及 InkLayer 會畫成圖形的 <code>```graph</code> 區塊（其他 App 會顯示成程式碼）。</p>
 
   <h2>畫布與心智圖</h2>
-  <p><code>.canvas</code> 檔是 <a href="https://jsoncanvas.org">JSON Canvas 1.0</a>，也就是 Obsidian Canvas 用的格式。InkLayer 額外的資訊放在卡片的 <code>"inklayer"</code> 物件裡（紙張樣式、紙膠帶），心智圖的卡片和連線則標上 <code>"inklayerMindMap": true</code>；其他 App 會略過這些欄位。畫布上的手寫存在 <code>&lt;名稱&gt;.canvas.ink/</code>。</p>
+  <p><code>.canvas</code> 檔是 <a href="https://jsoncanvas.org">JSON Canvas 1.0</a>，也就是 Obsidian Canvas 用的格式。InkLayer 額外的資訊放在卡片的 <code>"inklayer"</code> 物件裡（紙張樣式、紙膠帶，以及把檔案顯示成連結的 <code>"link": true</code>），心智圖的卡片和連線則標上 <code>"inklayerMindMap": true</code>；其他 App 會略過這些欄位。畫布上的手寫存在 <code>&lt;名稱&gt;.canvas.ink/</code>。</p>
 
   <h2>PDF</h2>
   <p>PDF 檔本身永遠不會被修改。寫在上面的一切都存在它旁邊的資料夾 <code>&lt;名稱&gt;.pdf.ink/</code>：</p>
@@ -84,7 +84,7 @@ addEventListener('DOMContentLoaded', () => {
     <li><code>document.json</code>：文件的 ID 與頁面。</li>
     <li><code>pages/page_0001.layers.json</code>：該頁的圖層。</li>
     <li><code>pages/page_0001.inklog.bin</code>：該頁的手寫（見下方）。</li>
-    <li><code>text_boxes.json</code>、<code>outline.json</code>（自己編的目錄）、<code>review.json</code>（標記要複習的頁面）、<code>page_list.json</code>（頁面順序）、<code>recordings.json</code>。</li>
+    <li><code>text_boxes.json</code>、<code>outline.json</code>（自己編的目錄）、<code>review.json</code>（標記要複習的頁面，以及下次複習的時間）、<code>page_list.json</code>（頁面順序）、<code>recordings.json</code>。</li>
     <li><code>pdf_text.json</code>：供搜尋用的 PDF 文字，掃描頁是在裝置上辨識的。只是索引，刪掉也沒關係。</li>
   </ul>
 
