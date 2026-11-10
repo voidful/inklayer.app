@@ -169,7 +169,7 @@ COPY = {
             ("export", "Export", "Export a PDF with your ink, or a canvas as a PDF, an image or a video."),
             ("lock", "Encrypted backups", "Export the whole library, optionally encrypted with a passphrase."),
         ],
-        "soon_badge": "Coming soon",
+        "soon_badge": "New",
         "soon_h2": "InkLayer 1.3",
         "soon": [
             ("Notebooks and practice paper", "A4 or Letter pages of ruled, grid or dotted paper, or 田字格, 米字格 and four-line paper. They print at their real size."),
@@ -181,7 +181,7 @@ COPY = {
             ("A word list", "Add a word from any PDF with the sentence it came from and a link back to it."),
             ("Mistakes come back", "Pages marked as mistakes come up again after 1, 3, 7 and 14 days."),
         ],
-        "soon_note": "InkLayer 1.3 is in App Store review; once it is approved, iPhone, iPad and Mac can update. Transcripts and live captions need iOS, iPadOS or macOS 26; translation needs iOS or iPadOS 18, or macOS 15; filling in forms needs iPhone, iPad or Mac.",
+        "soon_note": "InkLayer 1.3 is out now on iPhone, iPad and Mac. Transcripts and live captions need iOS, iPadOS or macOS 26; translation needs iOS or iPadOS 18, or macOS 15; filling in forms needs iPhone, iPad or Mac.",
         "pricing_h2": "Free to start. Yours for good.",
         "pricing_p": "Every feature is in the free version. Lifetime removes one limit, once.",
         "plans": [
@@ -261,7 +261,7 @@ COPY = {
             ("export", "匯出", "匯出含手寫的 PDF，或把畫布匯出成 PDF、圖片或影片。"),
             ("lock", "加密備份", "整個筆記庫一次匯出，也可以用密碼加密。"),
         ],
-        "soon_badge": "即將推出",
+        "soon_badge": "新功能",
         "soon_h2": "InkLayer 1.3",
         "soon": [
             ("筆記本與練字紙", "A4 或 Letter 頁面，橫線、方格、點陣，還有田字格、米字格、四線三格；印出來跟螢幕上一樣大。"),
@@ -273,7 +273,7 @@ COPY = {
             ("生字本", "從 PDF 選一個字加入生字本，連同出處句子與回到原頁的連結。"),
             ("錯題會再回來", "標成錯題的頁面，會在第 1、3、7、14 天回到「今天複習」。"),
         ],
-        "soon_note": "InkLayer 1.3 正在 App Store 審核，通過後 iPhone、iPad 與 Mac 都能更新。逐字稿與即時字幕需要 iOS、iPadOS 或 macOS 26；翻譯需要 iOS／iPadOS 18 或 macOS 15；填寫表單需要 iPhone、iPad 或 Mac。",
+        "soon_note": "InkLayer 1.3 已在 iPhone、iPad 與 Mac 上架。逐字稿與即時字幕需要 iOS、iPadOS 或 macOS 26；翻譯需要 iOS／iPadOS 18 或 macOS 15；填寫表單需要 iPhone、iPad 或 Mac。",
         "pricing_h2": "先免費用，喜歡再買斷。",
         "pricing_p": "免費版就有所有功能。終身版只解除一個限制，一次就好。",
         "plans": [
