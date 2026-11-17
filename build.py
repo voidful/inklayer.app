@@ -175,7 +175,7 @@ COPY = {
             ("eink", "E-ink mode", "No animation and higher contrast, for e-paper tablets."),
             ("lock", "Encrypted backups", "Export the whole library, optionally encrypted with a passphrase."),
         ],
-        "soon_badge": "Coming soon",
+        "soon_badge": "New",
         "soon_h2": "InkLayer 1.4",
         "soon": [
             ("Pick up the Pencil and write", "On iPad, documents open with your pen; fingers move and zoom, and a long press still selects text in a PDF."),
@@ -187,7 +187,7 @@ COPY = {
             ("Recordings keep going", "On iPhone and iPad, recording continues with the screen locked or another app in front, and carries on after a call."),
             ("Report a problem", "Settings › About › Report a problem fills in the app version, device model and system for you."),
         ],
-        "soon_note": "InkLayer 1.4 is in App Store review; once it is approved, iPhone, iPad and Mac can update. Transcripts and live captions need iOS, iPadOS or macOS 26; translation needs iOS or iPadOS 18, or macOS 15.",
+        "soon_note": "InkLayer 1.4 is out now on iPhone, iPad and Mac. Transcripts and live captions need iOS, iPadOS or macOS 26; translation needs iOS or iPadOS 18, or macOS 15.",
         "pricing_h2": "Free to start. Yours for good.",
         "pricing_p": "Every feature is in the free version. Lifetime removes one limit, once.",
         "plans": [
@@ -270,7 +270,7 @@ COPY = {
             ("eink", "電子紙模式", "關閉動畫、提高對比，適合電子紙平板。"),
             ("lock", "加密備份", "整個筆記庫一次匯出，也可以用密碼加密。"),
         ],
-        "soon_badge": "即將推出",
+        "soon_badge": "新功能",
         "soon_h2": "InkLayer 1.4",
         "soon": [
             ("拿起 Pencil 就能寫", "在 iPad 上，文件打開就是筆，手指負責移動和縮放；在 PDF 上用手指長按照樣能選字。"),
@@ -282,7 +282,7 @@ COPY = {
             ("錄音不中斷", "在 iPhone 和 iPad 上，鎖定螢幕或切到其他 App，錄音會繼續；來電結束後會接著錄。"),
             ("回報問題", "設定 › 關於 › 回報問題，自動附上 App 版本、裝置型號與系統版本。"),
         ],
-        "soon_note": "InkLayer 1.4 正在 App Store 審核，通過後 iPhone、iPad 與 Mac 都能更新。逐字稿與即時字幕需要 iOS、iPadOS 或 macOS 26；翻譯需要 iOS／iPadOS 18 或 macOS 15。",
+        "soon_note": "InkLayer 1.4 已在 iPhone、iPad 與 Mac 上架。逐字稿與即時字幕需要 iOS、iPadOS 或 macOS 26；翻譯需要 iOS／iPadOS 18 或 macOS 15。",
         "pricing_h2": "先免費用，喜歡再買斷。",
         "pricing_p": "免費版就有所有功能。終身版只解除一個限制，一次就好。",
         "plans": [
